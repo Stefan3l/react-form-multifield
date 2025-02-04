@@ -11,3 +11,7 @@ form {
   align-items: center;
   margin-top: 40px;
 }
+
+li {
+  list-style: none;
+}
