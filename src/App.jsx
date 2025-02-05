@@ -76,7 +76,7 @@ export default function App() {
           onChange={(e) => hanldeFormList("motore", e.target.value)}
           required
         >
-          <option value="" disabled>
+          <option value="" hidden>
             None
           </option>
           <option value="1.4">1.4</option>
