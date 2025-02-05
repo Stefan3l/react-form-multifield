@@ -1,16 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
+const modelCars = {
+  marca: "",
+  modelo: "",
+  motore: "",
+  avaible: true,
+};
+
 export default function App() {
   const [list, setList] = useState([]);
-  const [formDataCars, setFormDataCars] = useState("");
-
-  const modelCars = {
-    marca: "",
-    modelo: "",
-    motore: "",
-    avaible: false,
-  };
+  const [formDataCars, setFormDataCars] = useState(modelCars);
 
   const hanldeFormList = (fieldName, value) => {
     setFormDataCars((curentState) => ({
@@ -61,14 +61,14 @@ export default function App() {
           value={formDataCars.marca}
           onChange={(e) => hanldeFormList("marca", e.target.value)}
           required
-        ></input>
+        />
         <input
           type="text"
           placeholder="inserisci modelo"
           value={formDataCars.modelo}
           onChange={(e) => hanldeFormList("modelo", e.target.value)}
           required
-        ></input>
+        />
         <label>Choose a motore:</label>
         <select
           name="motore"
@@ -85,8 +85,9 @@ export default function App() {
         <label htmlFor="">Validazione</label>
         <input
           type="checkbox"
+          checked={formDataCars.avaible}
           onChange={(e) => hanldeFormList("avaible", e.target.checked)}
-        ></input>
+        />
         <button type="submit">Invia</button>
       </form>
     </div>
